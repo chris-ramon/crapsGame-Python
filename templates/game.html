@@ -1,0 +1,43 @@
+$def with(sideOne,sideTwo,result,msg)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html"; charset="utf-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Christian Ramón">
+		<meta name="robots" content="all ,follow, index">
+		<meta name="generator" content="gedit">
+
+		<title>Craps Game</title>
+		
+		<link rel="stylesheet" href="../static/mainStyle.css" type="text/css"/>	
+	
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+		<script src="js/mainScript.js" type="text/javascript"></script>
+		
+	<head/>
+
+	<body>
+        <h1>Craps Game</h1>
+            
+                <p>The first side is : $sideOne</p>
+                <p>The second side is : $sideTwo</p>
+                <p>Result: $result</p>
+                <p>$msg</p>
+
+                $if msg=="Keep playing":
+                    <p>You need: $result, in order to win</p>
+                    <form method="post" action="/game/2">
+                        <input type="hidden" name="result" value=$result>
+                        <button type="submit">Go ... </button>
+                    </form>
+                
+                <footer>
+                <br><a href="/">Home</a>
+                </footer>                
+	</body>
+
+		
+		
+</html>
